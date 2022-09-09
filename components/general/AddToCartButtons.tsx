@@ -1,26 +1,37 @@
 import AddIcon from "../svg/AddIcon";
 import MinusIcon from "../svg/MinusIcon";
 import TrashIcon from "../svg/TrashIcon";
-import {useState} from "react";
-import {useDispatch} from "react-redux";
+import {useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 import {addToCart, removeFromCart} from "../../store/redux/actions/cart";
+import {ProductItemCartIdType} from "../../store/redux/reducers/cart";
 
 type Props = {
   id: number
 }
 
 function AddToCartButtons({id}:Props) {
+
+  const cart = useSelector((state: any) => {
+    return state.cart
+  })
+
+  useEffect(function () {
+    console.log('cart', cart)
+  }, [cart])
+
+  const filteredProductId = cart.productIds.filter((item:ProductItemCartIdType) => item?.id === id)
+  const currentProductIdExistInCart = filteredProductId.length > 0
+  const itemNumber = currentProductIdExistInCart ? filteredProductId[0].number : 0
+
   const dispatch = useDispatch()
-  const [itemNumber, setItemNumber] = useState<number>(0);
 
   function addItemHandler() {
     dispatch(addToCart(id))
-    setItemNumber((prev) => ++prev);
   }
 
   function removeItemHandler() {
     dispatch(removeFromCart(id))
-    setItemNumber((prev) => prev > 0 ? --prev : prev);
   }
 
   return itemNumber === 0 ? (

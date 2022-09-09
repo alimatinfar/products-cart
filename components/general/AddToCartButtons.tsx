@@ -2,16 +2,24 @@ import AddIcon from "../svg/AddIcon";
 import MinusIcon from "../svg/MinusIcon";
 import TrashIcon from "../svg/TrashIcon";
 import {useState} from "react";
+import {useDispatch} from "react-redux";
+import {addToCart, removeFromCart} from "../../store/redux/actions/cart";
 
+type Props = {
+  id: number
+}
 
-function AddToCartButtons() {
+function AddToCartButtons({id}:Props) {
+  const dispatch = useDispatch()
   const [itemNumber, setItemNumber] = useState<number>(0);
 
   function addItemHandler() {
+    dispatch(addToCart(id))
     setItemNumber((prev) => ++prev);
   }
 
   function removeItemHandler() {
+    dispatch(removeFromCart(id))
     setItemNumber((prev) => prev > 0 ? --prev : prev);
   }
 
@@ -24,7 +32,7 @@ function AddToCartButtons() {
     </button>
   ) : (
     <div
-      className='flex justify-between items-center bg-custom-red-500/5 rounded-lg'
+      className='flex justify-between items-center bg-custom-red-500/5 rounded-lg bg-gray-200 space-x-1 space-x-reverse'
     >
       <button className="p-1 pr-1 " onClick={addItemHandler}>
         <AddIcon className="fill-custom-red-500 w-4"/>

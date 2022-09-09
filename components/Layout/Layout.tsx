@@ -13,7 +13,7 @@ function Layout({children, title}: Props) {
     <>
       <Header/>
 
-      <Container className='w-11/12 mx-auto my-10 p-10'>
+      <Container className='w-11/12 mx-auto my-10 p-3 md:p-6 lg:p-10'>
         <Typography size='xl' className='text-center'>
           {title}
         </Typography>

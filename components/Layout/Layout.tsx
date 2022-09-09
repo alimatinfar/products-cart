@@ -1,10 +1,7 @@
 import Header from "./Header/Header";
 import {ReactNode} from "react";
 import Typography from "../UI/Typography/Typography";
-import RenderLogic from "../general/RenderLogic";
 import Container from "../general/Container";
-import {ProductResponseType} from "../../store/redux/api/products";
-import ProductCard from "../pages/Home/ItemsList/ProductCard";
 
 type Props = {
   children: ReactNode;

@@ -1,7 +1,6 @@
 import AddIcon from "../svg/AddIcon";
 import MinusIcon from "../svg/MinusIcon";
 import TrashIcon from "../svg/TrashIcon";
-import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {addToCart, removeFromCart} from "../../store/redux/actions/cart";
 import {ProductItemCartIdType} from "../../store/redux/reducers/cart";
@@ -15,10 +14,6 @@ function AddToCartButtons({id}:Props) {
   const cart = useSelector((state: any) => {
     return state.cart
   })
-
-  useEffect(function () {
-    console.log('cart', cart)
-  }, [cart])
 
   const filteredProductId = cart.productIds.filter((item:ProductItemCartIdType) => item?.id === id)
   const currentProductIdExistInCart = filteredProductId.length > 0

@@ -1,5 +1,4 @@
 import Layout from "../../components/Layout/Layout";
-import {useEffect} from "react";
 import {useSelector} from "react-redux";
 import {ProductResponseType} from "../../store/redux/api/products";
 import ItemsList from "../../components/pages/Home/ItemsList/ItemsList";
@@ -12,10 +11,6 @@ function Cart() {
   const products = useSelector((state: any) => {
     return state.products
   })
-
-  useEffect(function () {
-    console.log('cart', cart)
-  }, [cart])
 
   const items = []
 

@@ -13,8 +13,7 @@ export const cartReducer = (state = initialState, action:any) => {
   const productId = action?.payload?.productId
   const filteredProductId:ProductItemCartIdType[] = state.productIds.filter((item:ProductItemCartIdType) => item?.id === productId)
   const currentProductIdExistInCart = filteredProductId.length > 0
-  console.log('filteredProductId', filteredProductId)
-  console.log('currentProductIdExistInCart', currentProductIdExistInCart)
+
   function updateNumber(type:'inc' | 'dec') {
     return {
       productIds: state.productIds.map(function(item: ProductItemCartIdType) {

@@ -15,10 +15,6 @@ const Home: NextPage = () => {
   })
 
   useEffect(function () {
-    console.log('products', products)
-  }, [products])
-
-  useEffect(function () {
     products.items.length === 0 && dispatch(getProductsRequest())
   }, [])
 

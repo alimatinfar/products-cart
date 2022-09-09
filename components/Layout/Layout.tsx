@@ -1,4 +1,4 @@
-import Header from "./pages/Home/Header/Header";
+import Header from "./Header/Header";
 import {ReactNode} from "react";
 
 type Props = {

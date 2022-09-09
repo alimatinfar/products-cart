@@ -1,0 +1,17 @@
+import React from 'react'
+
+const MinusIcon:React.FC<{className?:string}> = ({className}) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className={className}>
+    <g id="vuesax_outline_minus" data-name="vuesax/outline/minus" transform="translate(-556 -252)">
+      <g id="minus">
+        <path id="Vector" d="M12.75,1.5H.75A.755.755,0,0,1,0,.75.755.755,0,0,1,.75,0h12a.755.755,0,0,1,.75.75A.755.755,0,0,1,12.75,1.5Z" transform="translate(561.25 263.25)" fill="current"/>
+        <path id="Vector-2" data-name="Vector" d="M0,0H24V24H0Z" transform="translate(556 252)" fill="none" opacity="0"/>
+      </g>
+    </g>
+  </svg>
+  
+  )
+}
+
+export default MinusIcon

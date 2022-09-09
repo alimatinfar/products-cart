@@ -1,7 +1,7 @@
-import Container from "../../../Container";
+import Container from "../../general/Container";
 import Link from "next/link";
-import CartIcon from "../../../svg/CartIcon";
-import CustomLink from "../../../UI/CustomLink";
+import CartIcon from "../../svg/CartIcon";
+import CustomLink from "../../UI/CustomLink";
 import {useRouter} from "next/router";
 
 
